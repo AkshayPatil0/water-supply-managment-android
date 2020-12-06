@@ -1,4 +1,4 @@
-package com.watersystem.client
+package com.watersystem.main
 
 import android.content.Context
 

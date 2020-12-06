@@ -1,4 +1,4 @@
-package com.watersystem.client.constants
+package com.watersystem.main.constants
 
 class Constants(){
     public val firebaseKey = "watersystem-285a9"

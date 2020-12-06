@@ -1,10 +1,11 @@
-package com.watersystem.client
+package com.watersystem.main
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.watersystem.client.R
 import kotlinx.android.synthetic.main.activity_login.*
 
 
@@ -31,7 +32,7 @@ class ActivityLogin : AppCompatActivity() {
         val password = edittext_loginPassword.text.toString()
 
         if(!username.isEmpty() && !password.isEmpty()){
-            this.mAuth.signInWithEmailAndPassword("$username@wms.com", password).addOnCompleteListener ( this, { task ->
+            this.mAuth.signInWithEmailAndPassword("$username@wsm.com", password).addOnCompleteListener ( this, { task ->
                 if (task.isSuccessful) {
                     showToast("Login Successful")
                     MyPreferences(this).setUserName(username)

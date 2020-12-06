@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.watersystem.client">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -20,16 +19,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ClientMain">
+        <activity android:name="com.watersystem.main.ActivityNewCustomer"></activity>
+        <activity android:name="com.watersystem.main.ActivityMenu" />
+        <activity android:name="com.watersystem.main.ActivityUserOptions" />
+        <activity android:name="com.watersystem.main.ActivityUserList" />
+        <activity android:name="com.watersystem.main.ActivityMain">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ActivityLogin" />
-        <activity android:name=".ActivityRegister" />
-        <activity android:name=".ActivityMenu" />
+        <activity android:name="com.watersystem.main.ActivityLogin" />
+        <activity android:name="com.watersystem.main.ActivityRegister" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -42,11 +44,6 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".ActivityDetectDriver"
-            android:label="@string/title_activity_detect_driver" />
-        <activity android:name=".ActivityMakeOrder" />
-        <activity android:name=".ActivityConfirmOrder"></activity>
     </application>
 
 </manifest>

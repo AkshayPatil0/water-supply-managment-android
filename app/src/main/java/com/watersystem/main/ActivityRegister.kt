@@ -1,4 +1,4 @@
-package com.watersystem.client
+package com.watersystem.main
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
@@ -6,8 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.watersystem.client.constants.Constants
+import com.watersystem.client.R
 import kotlinx.android.synthetic.main.activity_register.*
 
 class ActivityRegister : AppCompatActivity() {
@@ -19,7 +18,7 @@ class ActivityRegister : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
 
-        mDatabase = FirebaseDatabase.getInstance().getReference("wms-database").child(Constants().users)
+//        mDatabase = FirebaseDatabase.getInstance().getReference("users").child(Constants().users)
         btn_register.setOnClickListener {
             try{
                 register()
@@ -31,7 +30,7 @@ class ActivityRegister : AppCompatActivity() {
 
     private fun register(){
 
-        val name = edittext_name.text.toString()
+//        val name = edittext_name.text.toString()
         val username = edittext_username.text.toString()
         val password = edittext_password.text.toString()
         val confirmPassword = edittext_confirmPassword.text.toString()
@@ -39,11 +38,11 @@ class ActivityRegister : AppCompatActivity() {
 
 
         if(isInformationValid(username, password, confirmPassword)){
-            mAuth.createUserWithEmailAndPassword("$username@wms.com", password).addOnCompleteListener(this, { task->
+            mAuth.createUserWithEmailAndPassword("$username@wsm.com", password).addOnCompleteListener(this, { task->
                 if(task.isSuccessful){
-                    mDatabase.child(uid).child(Constants().name).setValue(name)
-                    mDatabase.child(uid).child(Constants().username).setValue(username)
-                    mDatabase.child(uid).child(Constants().password).setValue(password)
+//                    mDatabase.child(uid).child(Constants().name).setValue(name)
+//                    mDatabase.child(uid).child(Constants().username).setValue(username)
+//                    mDatabase.child(uid).child(Constants().password).setValue(password)
                     showToast("Registration successful")
                     MyPreferences(this).setUserName(username)
                     startActivity(Intent(this@ActivityRegister, ActivityMenu::class.java))

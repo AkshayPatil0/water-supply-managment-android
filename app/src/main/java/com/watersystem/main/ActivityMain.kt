@@ -1,15 +1,16 @@
-package com.watersystem.client
+package com.watersystem.main
 
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_client_main.*
+import com.watersystem.client.R
+import kotlinx.android.synthetic.main.activity_main.*
 
-class ClientMain : AppCompatActivity() {
+class ActivityMain : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_client_main)
+        setContentView(R.layout.activity_main)
 
         if(MyPreferences(this).getUserName()!=""){
             startActivity(Intent(this, ActivityMenu::class.java))
